@@ -4,25 +4,25 @@ public class SavingsAccount {
 	private static double annualInterestRate;
 	private static double savingsBalance;
 
-	public SavingsAccount() {
-		savingsBalance = 0;
-		annualInterestRate = 0;
-	}
+    public SavingsAccount() {
+	savingsBalance = 0;
+	annualInterestRate = 0;
+}
 
-	protected SavingsAccount(double balance) {
+	public SavingsAccount(double balance) {
 		savingsBalance = balance;
 		annualInterestRate = 0;
 	}
 
-	protected void calculateMonthlyInterest() {
+	public void calculateMonthlyInterest() {
 		System.out.println("Current savings balance is : " + savingsBalance);
 		double monthlyInterest;
 		monthlyInterest = (savingsBalance * annualInterestRate) / 12;
 		savingsBalance += monthlyInterest;
-		System.out.println("New savings balance is : " + savingsBalance);
+		System.out.println("New savings balance after calculating monthly interest is : " + savingsBalance);
 	}
 
-	protected static double getBalance() {
+	public static double getBalance() {
 		return savingsBalance;
 	}
 
@@ -34,7 +34,7 @@ public class SavingsAccount {
 class SpecialSavings extends SavingsAccount {
 	protected static void modifyInterestRate() {
 		if (SavingsAccount.getBalance() > 10000) {
-			modifyInterestRate(.1);
+			modifyInterestRate(0.1);
 		}
 
 	}

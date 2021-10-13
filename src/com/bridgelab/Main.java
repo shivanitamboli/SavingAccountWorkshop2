@@ -3,17 +3,17 @@ package com.bridgelab;
 public class Main {
 	public static void main(String[] args)
     {
-        SavingsAccount person1 = new SavingsAccount(2000);
-        SavingsAccount person2 = new SavingsAccount(3000);
+        SavingsAccount person1 = new SavingsAccount(8000);
+        SavingsAccount person2 = new SavingsAccount(5000);
 
-        person1.modifyInterestRate(.04);
+        SavingsAccount.modifyInterestRate(0.02);
         person1.calculateMonthlyInterest();
-        person2.modifyInterestRate(.04);
+        SavingsAccount.modifyInterestRate(0.02);
         person2.calculateMonthlyInterest();
 
-        person1.modifyInterestRate(.05);
+        SavingsAccount.modifyInterestRate(0.03);
         person1.calculateMonthlyInterest();
-        person2.modifyInterestRate(.05);
+        SavingsAccount.modifyInterestRate(0.03);
         person2.calculateMonthlyInterest();
     }
 }
